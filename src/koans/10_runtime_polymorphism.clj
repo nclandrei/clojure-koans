@@ -10,9 +10,9 @@
                    "!")))
 
 (defmulti diet (fn [x] (:eater x)))
-(defmethod diet :herbivore [a] __)
-(defmethod diet :carnivore [a] __)
-(defmethod diet :default [a] __)
+(defmethod diet :herbivore [a] (format "%s eats veggies." (:name a)))
+(defmethod diet :carnivore [a] (format "%s eats animals." (:name a)))
+(defmethod diet :default [a] (format "I don't know what %s eats." (:name a)))
 
 (meditations
  "Some functions can be used in different ways - with no arguments"
